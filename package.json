@@ -1,0 +1,17 @@
+{
+  "name": "drip-contracts",
+  "version": "0.1.0",
+  "description": "DRIP lending framework",
+  "main": "index.js",
+  "repository": "https://github.com/dripdao/drip-contracts",
+  "author": "dripDAO",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "hardhat": "^2.9.1",
+    "hardhat-deploy": "^0.11.2",
+    "hardhat-deploy-ethers": "^0.3.0-beta.13"
+  }
+}
