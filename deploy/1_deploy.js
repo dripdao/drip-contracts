@@ -6,12 +6,11 @@ ethers.providers.BaseProvider.prototype.getGasPrice = async () => ethers.utils.p
 
 module.exports = async () => {
   const [ signer ] = await ethers.getSigners();
-  const tx = await deployments.deploy('DRIPProxy', {
-    contractName: 'DRIPProxy',
+  const tx = await deployments.deploy('DRIP', {
+    contractName: 'DRIP',
     args: [],
     libraries: {},
     from: await signer.getAddress()
   });
-	console.log(tx);
 };
   

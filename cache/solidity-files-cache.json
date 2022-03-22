@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/cipher/drip-contracts/contracts/token/DRIP.sol": {
-      "lastModificationDate": 1647976622518,
-      "contentHash": "540f5bf3f006407f59445b7415bf8936",
+      "lastModificationDate": 1647982741806,
+      "contentHash": "4dc320c5649234be4a159b0a9a499b78",
       "sourceName": "contracts/token/DRIP.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -46,7 +46,7 @@
       ]
     },
     "/home/cipher/drip-contracts/node_modules/@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol": {
-      "lastModificationDate": 1647912541718,
+      "lastModificationDate": 1647982356190,
       "contentHash": "41f034b817abdbfcced998bf8c9fd34a",
       "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol",
       "solcConfig": {
@@ -664,8 +664,8 @@
       ]
     },
     "/home/cipher/drip-contracts/contracts/token/DRIPBOND.sol": {
-      "lastModificationDate": 1647970074592,
-      "contentHash": "bcfe5f194e8e86353dd3ce19ea403526",
+      "lastModificationDate": 1647983582069,
+      "contentHash": "82c893b04d451c5fe87ee9e3b18c8701",
       "sourceName": "contracts/token/DRIPBOND.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1451,6 +1451,51 @@
       ],
       "artifacts": [
         "StorageSlot"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/proxy/DRIPBONDProxy.sol": {
+      "lastModificationDate": 1647983582061,
+      "contentHash": "9d94c622e300f8f281befa42d7be7531",
+      "sourceName": "contracts/proxy/DRIPBONDProxy.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
+        "../token/DRIPBOND.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "DRIPBONDProxy"
       ]
     }
   }

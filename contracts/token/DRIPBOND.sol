@@ -12,19 +12,20 @@ contract DRIPBOND is ERC721Upgradeable, OwnableUpgradeable {
   using SafeERC20 for IERC20;
   using SafeMath for *;
   uint256 count;
-  address drip;
-  address treasury;
+  address public constant drip = 0x0d44CfA6a50E4C16eE311af6EDAD36E89f90b0a6;
+  address public constant treasury = 0x592E10267af60894086d40DcC55Fe7684F8420D5;
   mapping (uint256 => uint256) public locked;
   mapping (uint256 => uint256) public unlockAt;
   uint256 public rate;
   uint256 public maturesAfter;
-  function initialize(address _treasury, address _drip, uint256 _rate) public {
+  function initialize() public initializer {
     __ERC721_init("DRIPBOND", "DRIPBOND");
-    treasury = _treasury;
-    drip = _drip;
-    rate = _rate;
+    rate = 2e16;
     count = 0;
     maturesAfter = 60*60*24*30;
+  }
+  function setRate(uint256 _rate) public onlyOwner {
+    rate = _rate;
   }
   function setMaturity(uint256 _maturesAfter) public onlyOwner {
     maturesAfter = _maturesAfter;

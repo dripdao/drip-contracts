@@ -1,9 +1,11 @@
 require("hardhat-deploy");
+require('@nomiclabs/hardhat-ethers');
 require("hardhat-deploy-ethers");
 require("@openzeppelin/hardhat-upgrades");
 require("hardhat-gas-reporter");
 require("@nomiclabs/hardhat-etherscan");
-const ethers = require("ethers");
+require('./tasks/multisig');
+const ethers = require('ethers');
 
 const RPC_ENDPOINTS = {
   ETHEREUM: "https://mainnet.infura.io/v3/816df2901a454b18b7df259e61f92cd2",
