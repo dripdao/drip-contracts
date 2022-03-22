@@ -6,12 +6,23 @@
   "repository": "https://github.com/dripdao/drip-contracts",
   "author": "dripDAO",
   "license": "MIT",
+  "scripts": {
+    "build": "hardhat compile",
+    "deploy": "hardhat deploy --network mainnet --export-all deployments/deployments.json",
+    "test:deploy": "hardhat deploy --network hardhat --export-all deployments/deployments.json"
+  },
   "private": false,
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
     "@openzeppelin/contracts": "^4.5.0",
     "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "@openzeppelin/hardhat-upgrades": "^1.16.1",
+    "ethers": "^5.6.1",
+    "ethers-gasnow": "https://github.com/kungfuflex/ethers-gasnow",
     "hardhat": "^2.9.1",
     "hardhat-deploy": "^0.11.2",
-    "hardhat-deploy-ethers": "^0.3.0-beta.13"
+    "hardhat-deploy-ethers": "^0.3.0-beta.13",
+    "hardhat-gas-reporter": "^1.0.8"
   }
 }
