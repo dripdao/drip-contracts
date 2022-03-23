@@ -22,6 +22,7 @@
     "@openzeppelin/contracts": "^4.5.0",
     "@openzeppelin/contracts-upgradeable": "^4.5.2",
     "@openzeppelin/hardhat-upgrades": "^1.16.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "ethers": "^5.6.1",
     "ethers-gasnow": "https://github.com/kungfuflex/ethers-gasnow",
     "hardhat": "^2.9.1",
