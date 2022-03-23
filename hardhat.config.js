@@ -46,6 +46,7 @@ module.exports = {
     mainnet: {
       url: RPC_ENDPOINTS.ETHEREUM,
       accounts,
+      gasPrice: Number(ethers.utils.parseUnits('25', 9)),
       chainId: 1,
     },
   },
