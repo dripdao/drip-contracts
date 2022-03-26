@@ -29,6 +29,7 @@
     "hardhat-deploy": "^0.11.2",
     "hardhat-deploy-ethers": "^0.3.0-beta.13",
     "hardhat-gas-reporter": "^1.0.8",
-    "nice-repl": "^0.1.2"
+    "nice-repl": "^0.1.2",
+    "zero-protocol": "https://github.com/zerodao-finance/zero-protocol"
   }
 }

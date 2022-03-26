@@ -664,8 +664,8 @@
       ]
     },
     "/home/cipher/drip-contracts/contracts/token/DRIPBOND.sol": {
-      "lastModificationDate": 1648053627468,
-      "contentHash": "5a4a30d9a3656043dc1166a2245a35f7",
+      "lastModificationDate": 1648335087882,
+      "contentHash": "cee03fbc7c57e3b4e9f990a92f2839ee",
       "sourceName": "contracts/token/DRIPBOND.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -703,8 +703,9 @@
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol",
         "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../interfaces/IGateway.sol",
         "@openzeppelin/contracts/utils/math/SafeMath.sol",
-        "hardhat/console.sol"
+        "../interfaces/IWETH.sol"
       ],
       "versionPragmas": [
         ">=0.6.0"
@@ -1670,6 +1671,268 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/interfaces/IController.sol": {
+      "lastModificationDate": 1648334549648,
+      "contentHash": "dc066cbcd5447012a94ec62321fe248a",
+      "sourceName": "contracts/interfaces/IController.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "IController"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/zero/DripModule.sol": {
+      "lastModificationDate": 1648335236116,
+      "contentHash": "9d5a1a564fda4a0b9d024b0575f06e4f",
+      "sourceName": "contracts/zero/DripModule.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../token/DRIPBOND.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../interfaces/IController.sol",
+        "../interfaces/ICurveETHUInt256.sol",
+        "../interfaces/IRenCrvArbitrum.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "DripModule"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/interfaces/ICurveETHUInt256.sol": {
+      "lastModificationDate": 1648335258772,
+      "contentHash": "b5239e03c74d71204f7ec0ac88c06731",
+      "sourceName": "contracts/interfaces/ICurveETHUInt256.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "ICurveETHUInt256"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/interfaces/IRenCrvArbitrum.sol": {
+      "lastModificationDate": 1648334652091,
+      "contentHash": "633cef790a9461d0e05735a93fef9dd2",
+      "sourceName": "contracts/interfaces/IRenCrvArbitrum.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "IRenCrvArbitrum"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/interfaces/IGateway.sol": {
+      "lastModificationDate": 1648334399678,
+      "contentHash": "9e7fa88720c01954b120d91ba6b9a1e4",
+      "sourceName": "contracts/interfaces/IGateway.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "IGateway"
+      ]
+    },
+    "/home/cipher/drip-contracts/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1648335248708,
+      "contentHash": "b1465163b4954a8332ed32eaced8e8f9",
+      "sourceName": "contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "IWETH"
       ]
     }
   }
