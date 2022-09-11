@@ -28,7 +28,6 @@ contract DRIP is ERC4626 {
 
   function deposit(uint256 assets, address receiver, uint256 minOut) public returns (uint256 result) {
     uint256 balance = balanceOf(receiver);
-
     super.deposit(assets, receiver);
     result = balanceOf(receiver) - balance;
 
@@ -37,7 +36,6 @@ contract DRIP is ERC4626 {
 
   function withdraw(uint256 assets, address receiver, address owner, uint256 minOut) public returns (uint256 result) {
     uint256 balance = IERC20(renbtc).balanceOf(receiver);
-
     super.withdraw(assets, receiver, owner);
     result = IERC20(renbtc).balanceOf(receiver) - balance;
 
@@ -46,7 +44,6 @@ contract DRIP is ERC4626 {
 
   function mint(uint256 shares, address receiver, uint256 minOut) public returns (uint256 result) {
     uint256 balance = balanceOf(receiver);
-
     super.mint(shares, receiver);
     result = balanceOf(receiver) - balance;
 
@@ -55,7 +52,6 @@ contract DRIP is ERC4626 {
 
   function redeem(uint256 shares, address receiver, address owner, uint256 minOut) public returns (uint256 result) {
     uint256 balance = IERC20(renbtc).balanceOf(receiver);
-
     super.redeem(shares, receiver, owner);
     result = IERC20(renbtc).balanceOf(receiver) - balance;
 
@@ -68,7 +64,6 @@ contract DRIP is ERC4626 {
     uint256 balance = IERC20(triCrypto2Token).balanceOf(address(this));
     // convert to wbtc
     uint256 converted = ITRICRYPTO2(triCrypto2Pool).calc_withdraw_one_coin(balance, 1);
-    // 
     return IRENCRV(renCrvLp).get_dy(1, 0, converted);
   }
 
@@ -81,15 +76,15 @@ contract DRIP is ERC4626 {
     SafeERC20.safeTransferFrom(IERC20(asset()), caller, address(this), assets);
     _mint(receiver, shares);
 
-    // swap renbtc to wbtc
+    // swap renbtc --> wbtc --> tricrypto2 LP
     // make low-level call instead of .exchange()
     // use abi coder to make a low level call --> returns boolean followed by bytes mem
+
+    // renbtc --> wbtc
     (bool renSuccess, ) = renCrvPool.call{gas:gasleft()} (abi.encodeWithSelector(IRENCRV.exchange.selector, 0, 1, assets, 1));
     require(renSuccess, "RenCrv reverted.");
 
-    // swap wbtc to tricrypto2 LP
-    // make low-level call instead of .exchange()
-    // use abi coder to make a low level call --> returns boolean followed by bytes mem
+    // wbtc --> tricrypto2 LP
     uint256[3] memory amounts = [ 0, IERC20(wbtc).balanceOf(address(this)), 0 ];
     (bool triSuccess, ) = triCrypto2Pool.call{gas:gasleft()} (abi.encodeWithSelector(ITRICRYPTO2.add_liquidity.selector, amounts, 1));
     require(triSuccess, "triCrypto2 reverted.");
