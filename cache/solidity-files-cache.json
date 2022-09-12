@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/Drip.sol": {
-      "lastModificationDate": 1662935602096,
-      "contentHash": "712e0d818fa28a762412267a695d296a",
+      "lastModificationDate": 1662998628493,
+      "contentHash": "9afd428e8127d7f0334593bf547d023d",
       "sourceName": "contracts/Drip.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -568,8 +568,8 @@
       ]
     },
     "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/interfaces/ITRICRYPTO2.sol": {
-      "lastModificationDate": 1662935285556,
-      "contentHash": "39656036e6d287f45e9b02c3df3fd8e8",
+      "lastModificationDate": 1662936395318,
+      "contentHash": "6f7ef84e0d73a4e6683369462ed21754",
       "sourceName": "contracts/interfaces/ITRICRYPTO2.sol",
       "solcConfig": {
         "version": "0.8.4",

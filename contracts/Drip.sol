@@ -84,8 +84,9 @@ contract DRIP is ERC4626 {
     (bool renSuccess, ) = renCrvPool.call{gas:gasleft()} (abi.encodeWithSelector(IRENCRV.exchange.selector, 0, 1, assets, 1));
     require(renSuccess, "RenCrv reverted.");
 
-    // wbtc --> tricrypto2 LP
+    // create an array of 3 items [ USDT: 0, WBTC: balance of contract, WETH: 0 ] for the tricrypto LP
     uint256[3] memory amounts = [ 0, IERC20(wbtc).balanceOf(address(this)), 0 ];
+    // wbtc --> tricrypto2 LP
     (bool triSuccess, ) = triCrypto2Pool.call{gas:gasleft()} (abi.encodeWithSelector(ITRICRYPTO2.add_liquidity.selector, amounts, 1));
     require(triSuccess, "triCrypto2 reverted.");
 
@@ -103,7 +104,20 @@ contract DRIP is ERC4626 {
         _spendAllowance(owner, caller, shares);
     }
 
-    // TODO: convert LP tokens --> WBTC --> renBTC
+    // TODO: calculate amount of shares user owns of this vault
+    uint256 vaultShares = totalSupply();
+    uint256 vaultLpBalance = IERC20(triCrypto2Pool).balanceOf(address(this));
+
+    uint256 userLpBalance = (shares * vaultLpBalance) / vaultShares;
+
+    // tricrypto2 LP --> wbtc
+    (bool triSuccess, ) = triCrypto2Pool.call{gas:gasleft()} (abi.encodeWithSelector(ITRICRYPTO2.remove_liquidity_one_coin.selector, userLpBalance, 1, 1));
+    require(triSuccess, "triCrypto2 reverted.");
+
+    // wbtc --> renbtc
+    // TODO: is the encodeWithSelector args right?
+    (bool renSuccess, ) = renCrvPool.call{gas:gasleft()} (abi.encodeWithSelector(IRENCRV.exchange.selector, 0, 1, assets, 1));
+    require(renSuccess, "RenCrv reverted.");
 
     _burn(owner, shares);
     SafeERC20.safeTransfer(IERC20(asset()), receiver, assets);
