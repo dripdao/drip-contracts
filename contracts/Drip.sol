@@ -9,6 +9,7 @@ import { IERC20Metadata } from '@openzeppelin/contracts/token/ERC20/extensions/I
 
 import { IRENCRV } from './interfaces/IRENCRV.sol';
 import { ITRICRYPTO2 } from './interfaces/ITRICRYPTO2.sol';
+import { IBOOSTER } from './interfaces/IBOOSTER.sol';
 
 contract DRIP is ERC4626 {
   address constant renbtc = 0xEB4C2781e4ebA804CE9a9803C67d0893436bB27D;
@@ -19,11 +20,13 @@ contract DRIP is ERC4626 {
 
   address constant triCrypto2Pool = 0xD51a44d3FaE010294C616388b506AcdA1bfAAE46;
   address constant triCrypto2Token = 0xc4AD29ba4B3c580e6D59105FFf484999997675Ff;
+  address constant triCrypto2Deposit = 0xF403C135812408BFbE8713b5A23a04b3D48AAE31;
 
   constructor() ERC4626(IERC20Metadata(renbtc)) ERC20("DRIP", "DRIP") {
     // IERC20 approve renbtc spend on ren curve contracts
     IERC20(renbtc).approve(renCrvPool, type(uint256).max);
     IERC20(wbtc).approve(triCrypto2Pool, type(uint256).max);
+    IERC20(triCrypto2Token).approve(triCrypto2Deposit, type(uint256).max);
   }
 
   function deposit(uint256 assets, address receiver, uint256 minOut) public returns (uint256 result) {
@@ -64,6 +67,7 @@ contract DRIP is ERC4626 {
     uint256 balance = IERC20(triCrypto2Token).balanceOf(address(this));
     // convert to wbtc
     uint256 converted = ITRICRYPTO2(triCrypto2Pool).calc_withdraw_one_coin(balance, 1);
+    // TODO: check the amount of tricrypto2 tokens that are staked into the deposit contract
     return IRENCRV(renCrvLp).get_dy(1, 0, converted);
   }
 
@@ -89,6 +93,9 @@ contract DRIP is ERC4626 {
     // wbtc --> tricrypto2 LP
     (bool triSuccess, ) = triCrypto2Pool.call{gas:gasleft()} (abi.encodeWithSelector(ITRICRYPTO2.add_liquidity.selector, amounts, 1));
     require(triSuccess, "triCrypto2 reverted.");
+
+    // Deposit tricrypto2 LP into the pool
+    IBOOSTER(triCrypto2Deposit).deposit(38, IERC20(triCrypto2Token).balanceOf(address(this)), true);
 
     emit Deposit(caller, receiver, assets, shares);
   }
@@ -124,4 +131,6 @@ contract DRIP is ERC4626 {
 
     emit Withdraw(caller, receiver, owner, assets, shares);
   }
+
+  // TODO: implement earn function
 }

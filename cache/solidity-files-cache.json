@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/Drip.sol": {
-      "lastModificationDate": 1662998628493,
-      "contentHash": "9afd428e8127d7f0334593bf547d023d",
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/contracts/Drip.sol": {
+      "lastModificationDate": 1663027264555,
+      "contentHash": "4bb38b08d97f0fcf368b2276a305e6b2",
       "sourceName": "contracts/Drip.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -42,7 +42,8 @@
         "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
         "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
         "./interfaces/IRENCRV.sol",
-        "./interfaces/ITRICRYPTO2.sol"
+        "./interfaces/ITRICRYPTO2.sol",
+        "./interfaces/IBOOSTER.sol"
       ],
       "versionPragmas": [
         ">=0.8.0"
@@ -51,7 +52,221 @@
         "DRIP"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol": {
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/contracts/interfaces/IRENCRV.sol": {
+      "lastModificationDate": 1662935303937,
+      "contentHash": "74e60135dfccb8561eb0e4fe58dbac19",
+      "sourceName": "contracts/interfaces/IRENCRV.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "IRENCRV"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/contracts/interfaces/ITRICRYPTO2.sol": {
+      "lastModificationDate": 1662936395318,
+      "contentHash": "6f7ef84e0d73a4e6683369462ed21754",
+      "sourceName": "contracts/interfaces/ITRICRYPTO2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "ITRICRYPTO2"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1662842144379,
+      "contentHash": "af7bd64e1cfefbf6cb07f2adc1a25392",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1662842144379,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1662842145547,
+      "contentHash": "3a843b05b85a270e9455e3d2e804e633",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../extensions/draft-IERC20Permit.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol": {
       "lastModificationDate": 1662842145543,
       "contentHash": "ec70848d1691effc990bb40bd2d10847",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol",
@@ -98,7 +313,7 @@
         "ERC4626"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
       "lastModificationDate": 1662842145543,
       "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
@@ -142,10 +357,10 @@
         "IERC20Metadata"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1662842144379,
-      "contentHash": "af7bd64e1cfefbf6cb07f2adc1a25392",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1662842142647,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
@@ -176,19 +391,99 @@
           }
         }
       },
-      "imports": [
-        "./IERC20.sol",
-        "./extensions/IERC20Metadata.sol",
-        "../../utils/Context.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         "^0.8.0"
       ],
       "artifacts": [
-        "ERC20"
+        "Context"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/interfaces/IERC4626.sol": {
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1662842142647,
+      "contentHash": "c476b3895a94798b88a4bb97399e6dfe",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+      "lastModificationDate": 1662842145543,
+      "contentHash": "fb77f144244b9ab12533aa6ce85ef8c5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/interfaces/IERC4626.sol": {
       "lastModificationDate": 1662842142647,
       "contentHash": "cb420c41d73987fa812167081de427a5",
       "sourceName": "@openzeppelin/contracts/interfaces/IERC4626.sol",
@@ -233,7 +528,7 @@
         "IERC4626"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
       "lastModificationDate": 1662842144379,
       "contentHash": "fb23b534599db16bb969dc6afcdc4261",
       "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
@@ -275,221 +570,7 @@
         "Math"
       ]
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
-      "lastModificationDate": 1662842145547,
-      "contentHash": "3a843b05b85a270e9455e3d2e804e633",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../IERC20.sol",
-        "../extensions/draft-IERC20Permit.sol",
-        "../../../utils/Address.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "SafeERC20"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1662842144379,
-      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1662842142647,
-      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
-      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1662842142647,
-      "contentHash": "c476b3895a94798b88a4bb97399e6dfe",
-      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.1"
-      ],
-      "artifacts": [
-        "Address"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
-      "lastModificationDate": 1662842145543,
-      "contentHash": "fb77f144244b9ab12533aa6ce85ef8c5",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC20Permit"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/Vault.sol": {
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/contracts/Vault.sol": {
       "lastModificationDate": 1662840975566,
       "contentHash": "68b329da9893e34099c7d8ad5cb9c940",
       "sourceName": "contracts/Vault.sol",
@@ -527,10 +608,10 @@
       "versionPragmas": [],
       "artifacts": []
     },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/interfaces/IRENCRV.sol": {
-      "lastModificationDate": 1662935303937,
-      "contentHash": "74e60135dfccb8561eb0e4fe58dbac19",
-      "sourceName": "contracts/interfaces/IRENCRV.sol",
+    "/home/yoyobojo/Desktop/etc-projects/drip/drip-contracts/contracts/interfaces/IBOOSTER.sol": {
+      "lastModificationDate": 1663026629888,
+      "contentHash": "273dbc3139842217f077baf93a1fec5f",
+      "sourceName": "contracts/interfaces/IBOOSTER.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
@@ -564,47 +645,7 @@
       "imports": [],
       "versionPragmas": [],
       "artifacts": [
-        "IRENCRV"
-      ]
-    },
-    "/home/yoyobojo/Desktop/etc-projects/drip/app/drip-contracts/contracts/interfaces/ITRICRYPTO2.sol": {
-      "lastModificationDate": 1662936395318,
-      "contentHash": "6f7ef84e0d73a4e6683369462ed21754",
-      "sourceName": "contracts/interfaces/ITRICRYPTO2.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "ITRICRYPTO2"
+        "IBOOSTER"
       ]
     }
   }
